@@ -1,6 +1,12 @@
 
 <img width="1456" height="736" alt="Gemini_Generated_Image_4b0q814b0q814b0q" src="https://github.com/user-attachments/assets/7ce4d1d3-de99-4eb1-ae41-3e5f7623d22e" />
 
+## 🚀 Live Dashboard
+
+Click the link below to view the deployed app:
+
+👉 **https://etl-pakwheel-irkh2erec5hvb4py3xqgtm.streamlit.app/**
+
 
 ### **Pakwheels Data Analysis & Web App**
 
