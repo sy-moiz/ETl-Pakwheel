@@ -11,7 +11,16 @@ st.set_page_config(page_title="PakWheels Car Dashboard", layout="wide")
 # ------------------------
 @st.cache_data
 def load_data():
-    df = pd.read_csv("cleaned_car_data.csv")
+    try:
+        df = pd.read_csv("cleaned_car_data.csv")
+    except FileNotFoundError:
+        st.error("❌ cleaned_car_data.csv not found. Please upload the file.")
+        uploaded = st.file_uploader("Upload cleaned_car_data.csv", type=["csv"])
+        if uploaded is not None:
+            df = pd.read_csv(uploaded)
+        else:
+            st.stop()
+
     df["brand"] = df["title"].str.split().str[0]
     return df
 
@@ -19,7 +28,6 @@ df = load_data()
 
 st.title("🚗 PakWheels Car Market Dashboard")
 st.write("Live Data Analysis from PakWheels Karachi (Scraped & Cleaned)")
-
 st.markdown("---")
 
 # ------------------------
@@ -36,13 +44,10 @@ filtered_df = df.copy()
 
 if brand_filter != "All":
     filtered_df = filtered_df[filtered_df["brand"] == brand_filter]
-
 if fuel_filter != "All":
     filtered_df = filtered_df[filtered_df["fuel"] == fuel_filter]
-
 if year_filter != "All":
     filtered_df = filtered_df[filtered_df["year"] == year_filter]
-
 if trans_filter != "All":
     filtered_df = filtered_df[filtered_df["transmission"] == trans_filter]
 
