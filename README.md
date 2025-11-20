@@ -7,6 +7,7 @@ Click the link below to view the deployed app:
 
 👉 **https://etl-pakwheel-irkh2erec5hvb4py3xqgtm.streamlit.app/**
 
+The project is developed strictly for educational and learning purposes only.
 
 ### **Pakwheels Data Analysis & Web App**
 
